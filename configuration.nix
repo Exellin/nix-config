@@ -74,6 +74,17 @@
     packages = with pkgs; [
       kate
       git
+      microsoft-edge-dev
+      discord
+      insync
+      vscode
+      obsidian
+      spotify
+      postgresql
+      nodePackages.pnpm
+      nodenv
+      yt-dlp
+      vlc
     #  thunderbird
     ];
   };

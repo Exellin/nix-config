@@ -71,6 +71,7 @@
     isNormalUser = true;
     description = "Shawn Carnegie";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       kate
       git
@@ -85,8 +86,21 @@
       nodenv
       yt-dlp
       vlc
+      neofetch
     #  thunderbird
     ];
+  };
+
+  programs = {
+    zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      ohMyZsh = {
+        enable = true;
+        theme = "avit";
+      };
+    };
   };
 
   # Install firefox.

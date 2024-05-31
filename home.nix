@@ -71,6 +71,29 @@
     # EDITOR = "emacs";
   };
 
+  home.file.".config/Code/User/settings.json".text = ''
+    {
+      "terminal.integrated.defaultProfile.linux": "zsh",
+      "window.restoreFullscreen": true,
+      "window.newWindowDimensions": "fullscreen",
+      "editor.tabSize": 2,
+      "files.trimTrailingWhitespace": true,
+      "files.insertFinalNewline": true
+    }
+  '';
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dbaeumer.vscode-eslint
+      eamodio.gitlens
+      cweijan.vscode-database-client2
+      bbenoist.nix
+    ];
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -101,6 +101,9 @@
         theme = "avit";
       };
     };
+    steam = {
+      enable = true;
+    };
   };
 
   # Install firefox.

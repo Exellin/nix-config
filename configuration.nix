@@ -87,6 +87,7 @@
       yt-dlp
       vlc
       neofetch
+      konsave
     #  thunderbird
     ];
   };

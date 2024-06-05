@@ -88,6 +88,7 @@
       vlc
       neofetch
       konsave
+      pipx
     #  thunderbird
     ];
   };

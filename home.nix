@@ -92,6 +92,16 @@
     ];
   };
 
+  programs = {
+    zsh = {
+      enable = true;
+      initExtra = "path+=/home/shawnc/.local/bin";
+      shellAliases = {
+        "17lands" = "seventeenlands -l '.local/share/Steam/steamapps/compatdata/2141910/pfx/drive_c/users/steamuser/AppData/LocalLow/Wizards Of The Coast/MTGA/Player.log'";
+      };
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # Let Home Manager install and manage itself.

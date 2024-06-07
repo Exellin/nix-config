@@ -81,15 +81,13 @@
       vscode
       obsidian
       spotify
-      postgresql
       nodePackages.pnpm
-      nodenv
+      nodejs_22
       yt-dlp
       vlc
       neofetch
       konsave
       pipx
-    #  thunderbird
     ];
   };
 
@@ -106,6 +104,10 @@
     steam = {
       enable = true;
     };
+  };
+
+  services.postgresql = {
+    enable = true;
   };
 
   # Install firefox.

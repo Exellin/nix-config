@@ -88,6 +88,7 @@
       neofetch
       konsave
       pipx
+      redis
     ];
   };
 

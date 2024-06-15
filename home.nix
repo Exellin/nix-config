@@ -78,7 +78,10 @@
       "window.newWindowDimensions": "fullscreen",
       "editor.tabSize": 2,
       "files.trimTrailingWhitespace": true,
-      "files.insertFinalNewline": true
+      "files.insertFinalNewline": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+      },
     }
   '';
 

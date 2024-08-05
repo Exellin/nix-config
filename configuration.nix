@@ -105,6 +105,9 @@
     steam = {
       enable = true;
     };
+    kdeconnect = {
+      enable = true;
+    };
   };
 
   services.postgresql = {

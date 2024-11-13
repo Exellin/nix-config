@@ -92,6 +92,7 @@
       eamodio.gitlens
       cweijan.vscode-database-client2
       bbenoist.nix
+      denoland.vscode-deno
     ];
   };
 

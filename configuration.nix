@@ -76,6 +76,7 @@
     packages = with pkgs; [
       kate
       git
+      microsoft-edge
       microsoft-edge-dev
       discord
       insync

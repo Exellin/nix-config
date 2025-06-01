@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-playwright, ... }:
 
+let
+  browsers = (builtins.fromJSON (builtins.readFile "${pkgs-playwright.playwright-driver}/browsers.json")).browsers;
+  chromium-rev = (builtins.head (builtins.filter (x: x.name == "chromium") browsers)).revision;
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -67,7 +71,7 @@
   #
   #  /etc/profiles/per-user/shawnc/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
+    home.sessionVariables = {
     # EDITOR = "emacs";
   };
 
@@ -103,6 +107,13 @@
       shellAliases = {
         "17lands" = "seventeenlands -l '.local/share/Steam/steamapps/compatdata/2141910/pfx/drive_c/users/steamuser/AppData/LocalLow/Wizards Of The Coast/MTGA/Player.log'";
       };
+      # Based on https://nixos.wiki/wiki/Playwright
+      envExtra = ''
+        export PLAYWRIGHT_BROWSERS_PATH="${pkgs-playwright.playwright.browsers}"
+        export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS="true"
+        export PLAYWRIGHT_NODEJS_PATH="${pkgs.nodejs}/bin/node"
+        export PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH="${pkgs-playwright.playwright.browsers}/chromium-${chromium-rev}/chrome-linux/chrome"
+      '';
     };
   };
 

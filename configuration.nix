@@ -90,6 +90,7 @@
       pipx
       redis
       pkgs-unstable.deno
+      ruby
     ];
   };
 

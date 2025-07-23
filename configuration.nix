@@ -91,6 +91,7 @@
       redis
       pkgs-unstable.deno
       ruby
+      calibre
     ];
   };
 

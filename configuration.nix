@@ -92,7 +92,7 @@
       pkgs-unstable.deno
       ruby
       calibre
-      easyeffects
+      tauon
     ];
   };
 

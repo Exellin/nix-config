@@ -36,19 +36,20 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      variant = "";
+      layout = "us";
+    };
   };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -70,10 +71,9 @@
   users.users.shawnc = {
     isNormalUser = true;
     description = "Shawn Carnegie";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      kate
       git
       microsoft-edge
       discord
@@ -81,7 +81,7 @@
       vscode
       obsidian
       spotify
-      nodePackages.pnpm
+      pnpm
       nodejs_22
       yt-dlp
       vlc
@@ -113,6 +113,8 @@
       enable = true;
     };
   };
+
+  virtualisation.docker.enable = true;
 
   services.postgresql = {
     enable = true;

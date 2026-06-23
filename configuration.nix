@@ -86,9 +86,9 @@
       nodejs_22
       yt-dlp
       vlc
-      neofetch
+      fastfetch
       konsave
-      pipx
+      uv
       redis
       pkgs-unstable.deno
       ruby

@@ -91,9 +91,9 @@
       uv
       redis
       pkgs-unstable.deno
-      ruby
       calibre
       tauon
+      postgresql_18
     ];
   };
 
@@ -119,6 +119,7 @@
 
   services.postgresql = {
     enable = true;
+    package = pkgs.postgresql_18;
   };
 
   # Install firefox.

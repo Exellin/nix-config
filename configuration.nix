@@ -94,6 +94,7 @@
       calibre
       tauon
       postgresql_18
+      vivaldi
     ];
   };
 
